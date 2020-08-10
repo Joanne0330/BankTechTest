@@ -30,7 +30,14 @@ describe Account do
         account.withdraw(500)
         expect(account.balance).to equal(500)
     end
+  end
 
+  describe '#date' do
+    it 'can show the date' do
+        account = Account.new
+        account.date("25/12/2020")
+        expect(account.transaction_date).to eq("25/12/2020")
+    end
   end
 
 end
