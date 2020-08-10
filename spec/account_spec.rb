@@ -40,4 +40,15 @@ describe Account do
     end
   end
 
+  describe '#transaction' do
+    it 'keeps track of the info of each transaction' do
+      account = Account.new
+      account.date("25/12/2020")
+      account.deposit(1000)
+      account.transaction
+      expect(account.single_transaction). to eq("25/12/2020 || 1000 || 0 || 1000")
+    end
+
+  end
+
 end
