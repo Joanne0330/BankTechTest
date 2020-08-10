@@ -21,6 +21,15 @@ describe Account do
         account.deposit(500)
         expect(account.balance).to equal(1500)
     end
+  end
+
+  describe '#withdraw' do
+    it 'can subtract money into the account' do
+        account = Account.new
+        account.deposit(1000)
+        account.withdraw(500)
+        expect(account.balance).to equal(500)
+    end
 
   end
 

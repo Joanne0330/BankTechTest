@@ -10,4 +10,8 @@ class Account
       @balance += @input_amount
     end
 
+    def withdraw(output_amount)
+      @output_amount = output_amount
+      @balance -= @output_amount
+    end
 end
