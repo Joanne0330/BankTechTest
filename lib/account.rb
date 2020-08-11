@@ -1,7 +1,9 @@
+require_relative 'statement'
+
 class Account
     attr_reader :balance, :transaction_date, :single_transaction, :transactions_array
     RESET = nil
-    
+
     def initialize
       @balance = 0
       @input_amount = 0
