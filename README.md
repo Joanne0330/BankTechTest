@@ -34,3 +34,11 @@ As a Bank
 So that my clients can read their statement
 I would like all the transactions listed in the most recent order
 ```
+
+** The Statement should look like this:**
+```
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
