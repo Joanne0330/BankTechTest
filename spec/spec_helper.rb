@@ -13,6 +13,22 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+module UserSpecHelper
+
+  def deposit_transaction
+    account.date("25/12/2020")
+    account.deposit(1000)
+    account.transaction
+  end
+ 
+  def withdraw_transaction
+    account.date("26/12/2020")
+    account.withdraw(500)
+    account.transaction
+
+  end
+
+end
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

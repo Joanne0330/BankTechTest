@@ -1,22 +1,23 @@
 require './lib/account.rb'
 
 describe Account do
+
+  let(:account) {Account.new}
+  include UserSpecHelper
+    
   describe '#initialize' do
     it "has a balance of 0 before deposit or withdraw" do
-        account = Account.new
         expect(account.balance).to equal(0)
     end
   end
 
   describe '#deposit' do
     it 'can add money into the account' do
-        account = Account.new
         account.deposit(1000)
         expect(account.balance).to equal(1000)
     end
 
     it 'can add money into the account multiple times' do
-        account = Account.new
         account.deposit(1000)
         account.deposit(500)
         expect(account.balance).to equal(1500)
@@ -25,7 +26,6 @@ describe Account do
 
   describe '#withdraw' do
     it 'can subtract money into the account' do
-        account = Account.new
         account.deposit(1000)
         account.withdraw(500)
         expect(account.balance).to equal(500)
@@ -34,7 +34,6 @@ describe Account do
 
   describe '#date' do
     it 'can show the date' do
-        account = Account.new
         account.date("25/12/2020")
         expect(account.transaction_date).to eq("25/12/2020")
     end
@@ -42,34 +41,21 @@ describe Account do
 
   describe '#transaction' do
     it 'keeps track of the info of each transaction' do
-      account = Account.new
-      account.date("25/12/2020")
-      account.deposit(1000)
-      account.transaction
+      deposit_transaction
       expect(account.single_transaction). to eq("25/12/2020 || 1000 ||  || 1000")
     end
 
     it 'keeps track of the info of each transaction multiple times' do
-        account = Account.new
-        account.date("25/12/2020")
-        account.deposit(1000)
-        account.transaction
-        account.date("26/12/2020")
-        account.withdraw(500)
-        account.transaction
+        deposit_transaction
+        withdraw_transaction
         expect(account.single_transaction).to eq("26/12/2020 ||  || 500 || 500")
       end
   end
 
   describe '#transaction_array' do
     it 'contains all the transactions' do
-        account = Account.new
-        account.date("25/12/2020")
-        account.deposit(1000)
-        account.transaction
-        account.date("26/12/2020")
-        account.withdraw(500)
-        account.transaction
+        deposit_transaction
+        withdraw_transaction
         expect(account.transactions_array).to eq(["25/12/2020 || 1000 ||  || 1000", "26/12/2020 ||  || 500 || 500"])
     end
   end
