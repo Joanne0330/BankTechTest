@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-This is a tech test which I will use to practice JavaScript and Jasmine for test coverage.
+This is a tech test which I am using Ruby and Rspec for test coverage.
 
 **User Strories**
 
