@@ -5,13 +5,11 @@ class Statement
     @account = account
   end
 
-  def statement_array
-    @statement_array = @account.transactions_array
-  end
 
   def print_statement
-    @statement_array.append("date || credit || debit || balance").reverse
-    puts @statement_array
+    @statement_array = @account.transactions_array
+    puts @statement_array.append("date || credit || debit || balance").reverse.join("\n")
+    
   end
 
 end
