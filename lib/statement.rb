@@ -8,8 +8,7 @@ class Statement
 
   def print_statement
     @statement_array = @account.transactions_array
-    puts @statement_array.append("date || credit || debit || balance").reverse.join("\n")
-    
+    @statement_array.append("date || credit || debit || balance").reverse.join("\n") 
   end
 
 end
