@@ -57,9 +57,21 @@ describe Account do
         account.date("26/12/2020")
         account.withdraw(500)
         account.transaction
-        expect(account.single_transaction). to eq("26/12/2020 ||  || 500 || 500")
+        expect(account.single_transaction).to eq("26/12/2020 ||  || 500 || 500")
       end
+  end
 
+  describe '#transaction_array' do
+    it 'contains all the transactions' do
+        account = Account.new
+        account.date("25/12/2020")
+        account.deposit(1000)
+        account.transaction
+        account.date("26/12/2020")
+        account.withdraw(500)
+        account.transaction
+        expect(account.transactions_array).to eq(["25/12/2020 || 1000 ||  || 1000", "26/12/2020 ||  || 500 || 500"])
+    end
   end
 
 end
