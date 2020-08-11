@@ -59,5 +59,4 @@ describe Account do
         expect(account.transactions_array).to eq(["25/12/2020 || 1000 ||  || 1000", "26/12/2020 ||  || 500 || 500"])
     end
   end
-
 end

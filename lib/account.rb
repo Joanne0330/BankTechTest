@@ -8,8 +8,6 @@ class Account
       @balance = 0
       @input_amount = 0
       @output_amount = 0
-    #   @transaction_date = ""
-    #   @single_transaction = ""
       @transactions_array = []
 
     end
@@ -34,5 +32,4 @@ class Account
       @single_transaction = "#{@transaction_date} || #{@input_amount} || #{@output_amount} || #{@balance}"
       @transactions_array << @single_transaction
     end
-
 end

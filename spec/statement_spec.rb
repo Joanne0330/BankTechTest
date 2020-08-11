@@ -1,5 +1,3 @@
-# require './lib/statement.rb'
-
 describe 'Statement' do
     describe 'account' do
       it 'contains the account class' do
@@ -10,6 +8,4 @@ describe 'Statement' do
         expect(statement.print_statement).to eq ("date || credit || debit || balance\n25/12/2020 || 1000 ||  || 1000")
       end
     end
-
-
 end
