@@ -4,7 +4,7 @@ class Statement
     @account = account
   end
 
-  def print_statement
+  def print
     @statement_array = @account.transactions_array
     @statement_array.append("date || credit || debit || balance").reverse.join("\n") 
   end
