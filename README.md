@@ -3,6 +3,7 @@
 This is a tech test which I am using Ruby and Rspec for test coverage.
 
 **How it works**
+
 To test the functionality of this app, you'll have to use the terminal.
 ```
 Step 1: you type 'irb' into your terminal to launch IRB
@@ -60,12 +61,11 @@ So that my clients can read their statement
 I would like all the transactions listed in the most recent order
 ```
 
-**The Statement should look like this:**
+**The Statement should look something like this:**
 ```
 date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+12/08/2020 ||  || 500 || 500
+12/08/2020 || 1000 ||  || 1000 
 ```
 
 **Running the test**
