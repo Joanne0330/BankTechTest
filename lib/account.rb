@@ -11,24 +11,24 @@ class Account
 
     end
 
-    def deposit(date, input_amount)
-      @date = date
+    def deposit(input_amount)
+      @date = Time.new.strftime("%d/%m/%Y")
       @input_amount = input_amount
       @output_amount = RESET
       @balance += @input_amount
 
-      transaction(@date, @input_amount, @balance)
+      transaction(@date, @input_amount, @output_amount, @balance)
     end
 
-    def withdraw(date, output_amount)
-      @date = date
+    def withdraw(output_amount)
+      @date = Time.new.strftime("%d/%m/%Y")
       @output_amount = output_amount
       @input_amount = RESET
       @balance -= @output_amount
     end
 
 
-    def transaction(date, deposit, balance)
+    def transaction(date, deposit, withdraw, balance)
     #   @single_transaction = "#{@transaction_date} || #{@input_amount} || #{@output_amount} || #{@balance}"
     #   @transactions_array << @single_transaction
     end

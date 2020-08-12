@@ -8,27 +8,27 @@ describe Account do
 
   describe '#deposit' do
     it 'can add money into the account' do
-        account.deposit("11/11/11", 1000)
+        account.deposit(1000)
         expect(account.balance).to equal(1000)
     end
 
     it 'can add money into the account multiple times' do
-        account.deposit("11/11/11", 1000)
-        account.deposit("12/12/12", 500)
+        account.deposit(1000)
+        account.deposit(500)
         expect(account.balance).to equal(1500)
     end
   end
 
   describe '#withdraw' do
     it 'can subtract money into the account' do
-        account.deposit("11/11/11", 1000)
-        account.withdraw("12/12/12", 500)
+        account.deposit(1000)
+        account.withdraw(500)
         expect(account.balance).to equal(500)
     end
 
     it 'shows the date when withdraw money' do
-        account.withdraw("12/12/12", 500)
-        expect(account.date).to eq("12/12/12")
+        account.withdraw(500)
+        expect(account.date).to eq(Time.new.strftime("%d/%m/%Y"))
     end
   end
 
