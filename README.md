@@ -28,6 +28,23 @@ Step 5: To print a statement of all the transactions made:
     then: print statement.print
 ```
 
+**My Design**
+
+The design of my approach is very simple, just with 2 classes with the following functionalities:
+
+Account Class:
+
+  Can make a deposit: via 'deposit method' to add the value to the balance
+  Can make a withdraw: via 'withdraw method' to minus the value from the balance
+  Can make a receipt of the most recent transaction: via 'single_transaction' method
+  Can store the history of all the transactions made: via 'transactions_array' method
+
+Statement Class:
+  
+  Can print the statement of all the transactions: the 'transactions_array' method from the 
+    Account Class is first passed into the Statement Class, and user can print the statement via 
+    the 'print' method
+
 **User Strories**
 
 ```
