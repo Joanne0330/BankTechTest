@@ -18,7 +18,7 @@ class Account
       @output_amount = RESET
       @balance += @input_amount
 
-      transaction(@date, @input_amount, @output_amount, @balance)
+      transaction(@date, input_amount, @output_amount, @balance)
     end
 
     def withdraw(output_amount)
