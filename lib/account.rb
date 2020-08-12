@@ -1,35 +1,35 @@
 require_relative 'statement'
 
 class Account
-    attr_reader :balance, :transaction_date, :single_transaction, :transactions_array
+    attr_reader :balance, :date, :single_transaction, :transactions_array
     RESET = nil
 
     def initialize
       @balance = 0
-      @input_amount = 0
-      @output_amount = 0
-      @transactions_array = []
+    #   @output_amount = 0
+    #   @transactions_array = []
 
     end
 
-    def deposit(input_amount)
+    def deposit(date, input_amount)
+      @date = date
       @input_amount = input_amount
       @output_amount = RESET
       @balance += @input_amount
+
+      transaction(@date, @input_amount, @balance)
     end
 
-    def withdraw(output_amount)
+    def withdraw(date, output_amount)
+      @date = date
       @output_amount = output_amount
       @input_amount = RESET
       @balance -= @output_amount
     end
 
-    def date(transaction_date)
-        @transaction_date = transaction_date
-    end
 
-    def transaction
-      @single_transaction = "#{@transaction_date} || #{@input_amount} || #{@output_amount} || #{@balance}"
-      @transactions_array << @single_transaction
+    def transaction(date, deposit, balance)
+    #   @single_transaction = "#{@transaction_date} || #{@input_amount} || #{@output_amount} || #{@balance}"
+    #   @transactions_array << @single_transaction
     end
 end
