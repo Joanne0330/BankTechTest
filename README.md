@@ -4,7 +4,7 @@ This is a tech test which I am using Ruby and Rspec for test coverage.
 
 **How it works**
 To test the functionality of this app, you'll have to use the terminal.
-
+```
 Step 1: you type 'irb' into your terminal to launch IRB
 Step 2: require './lib/account.rb'
 Step 3: account = Account.new
@@ -25,7 +25,7 @@ Step 5: To print a statement of all the transactions made:
   -User can print a statment by typing in first:
     statement = Statment.new(account)
     then: print statement.print
-
+```
 
 **User Strories**
 
