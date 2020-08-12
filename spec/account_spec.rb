@@ -33,24 +33,24 @@ describe Account do
   end
 
 
-#   describe '#transaction' do
-#     it 'keeps track of the info of each transaction' do
-#       deposit_transaction
-#       expect(account.single_transaction). to eq("25/12/2020 || 1000 ||  || 1000")
-#     end
+  describe '#transaction' do
+    it 'keeps track of the info of each transaction' do
+      deposit_transaction
+      expect(account.single_transaction). to eq("#{Time.new.strftime("%d/%m/%Y")} || 1000 ||  || 1000")
+    end
 
-#     it 'keeps track of the info of each transaction multiple times' do
-#         deposit_transaction
-#         withdraw_transaction
-#         expect(account.single_transaction).to eq("26/12/2020 ||  || 500 || 500")
-#       end
-#   end
+    it 'keeps track of the info of each transaction multiple times' do
+        deposit_transaction
+        withdraw_transaction
+        expect(account.single_transaction).to eq("#{Time.new.strftime("%d/%m/%Y")} ||  || 500 || 500")
+    end
+  end
 
-#   describe '#transaction_array' do
-#     it 'contains all the transactions' do
-#         deposit_transaction
-#         withdraw_transaction
-#         expect(account.transactions_array).to eq(["25/12/2020 || 1000 ||  || 1000", "26/12/2020 ||  || 500 || 500"])
-#     end
-#   end
+  describe '#transaction_array' do
+    it 'contains all the transactions' do
+        deposit_transaction
+        withdraw_transaction
+        expect(account.transactions_array).to eq(["#{Time.new.strftime("%d/%m/%Y")} || 1000 ||  || 1000", "#{Time.new.strftime("%d/%m/%Y")} ||  || 500 || 500"])
+    end
+  end
 end

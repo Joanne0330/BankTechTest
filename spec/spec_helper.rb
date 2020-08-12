@@ -16,16 +16,11 @@
 module UserSpecHelper
 
   def deposit_transaction
-    account.date("25/12/2020")
     account.deposit(1000)
-    account.transaction
   end
  
   def withdraw_transaction
-    account.date("26/12/2020")
     account.withdraw(500)
-    account.transaction
-
   end
 
 end
