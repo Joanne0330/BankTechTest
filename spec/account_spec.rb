@@ -30,13 +30,13 @@ describe Account do
   describe '#transaction' do
     it 'keeps track of the info of each transaction' do
       deposit_transaction
-      expect(account.single_transaction). to eq("#{Time.new.strftime("%d/%m/%Y")} || 1000 ||  || 1000")
+      expect(account.last_transaction). to eq("#{Time.new.strftime("%d/%m/%Y")} || 1000.00 ||  || 1000.00")
     end
 
     it 'keeps track of the info of each transaction multiple times' do
         deposit_transaction
         withdraw_transaction
-        expect(account.single_transaction).to eq("#{Time.new.strftime("%d/%m/%Y")} ||  || 500 || 500")
+        expect(account.last_transaction).to eq("#{Time.new.strftime("%d/%m/%Y")} ||  || 500.00 || 500.00")
     end
   end
 
@@ -44,8 +44,8 @@ describe Account do
     it 'contains all the transactions' do
         deposit_transaction
         withdraw_transaction
-        expect(account.transactions_array).to eq(["#{Time.new.strftime("%d/%m/%Y")} || 1000 ||  || 1000", "#{Time.new.strftime("%d/%m/%Y")} ||  || 500 || 500"])
+        expect(account.transactions_array).to eq(["#{Time.new.strftime("%d/%m/%Y")} || 1000.00 ||  || 1000.00", "#{Time.new.strftime("%d/%m/%Y")} ||  || 500.00 || 500.00"])
     end
   end
-  
+
 end

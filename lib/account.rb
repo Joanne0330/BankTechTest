@@ -1,8 +1,7 @@
 require_relative 'statement'
 
 class Account
-    attr_reader :balance, :single_transaction, :transactions_array 
-    RESET = nil
+    attr_reader :balance, :last_transaction, :transactions_array 
 
     def initialize
       @balance = 0
@@ -12,23 +11,20 @@ class Account
 
     def deposit(input_amount)
       date = Time.new.strftime("%d/%m/%Y")
-      output_amount = RESET
       @balance += input_amount
-
-      transaction(date, input_amount, output_amount, balance)
+      input_amount = '%.2f'%input_amount 
+      transaction(date, input_amount, nil, balance)
     end
 
     def withdraw(output_amount)
       date = Time.new.strftime("%d/%m/%Y")
-      input_amount = RESET
       @balance -= output_amount
-
-      transaction(date, input_amount, output_amount, balance)
+      output_amount = '%.2f'%output_amount
+      transaction(date, nil, output_amount, balance)
     end
 
-
     def transaction(date, deposit, withdraw, balance)
-      @single_transaction = "#{date} || #{deposit} || #{withdraw} || #{balance}"
-      @transactions_array << @single_transaction
+      @last_transaction = "#{date} || #{deposit} || #{withdraw} || #{'%.2f'%balance}"
+      @transactions_array << @last_transaction
     end
 end
