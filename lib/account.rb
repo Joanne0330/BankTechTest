@@ -15,7 +15,7 @@ class Account
       output_amount = RESET
       @balance += input_amount
 
-      transaction(date, input_amount, output_amount, @balance)
+      transaction(date, input_amount, output_amount, balance)
     end
 
     def withdraw(output_amount)
@@ -23,12 +23,12 @@ class Account
       input_amount = RESET
       @balance -= output_amount
 
-      transaction(date, input_amount, output_amount, @balance)
+      transaction(date, input_amount, output_amount, balance)
     end
 
 
     def transaction(date, deposit, withdraw, balance)
-      @single_transaction = "#{date} || #{deposit} || #{withdraw} || #{@balance}"
+      @single_transaction = "#{date} || #{deposit} || #{withdraw} || #{balance}"
       @transactions_array << @single_transaction
     end
 end
