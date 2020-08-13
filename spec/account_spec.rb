@@ -25,13 +25,7 @@ describe Account do
         account.withdraw(500)
         expect(account.balance).to equal(500)
     end
-
-    it 'shows the date when withdraw money' do
-        account.withdraw(500)
-        expect(account.date).to eq(Time.new.strftime("%d/%m/%Y"))
-    end
   end
-
 
   describe '#transaction' do
     it 'keeps track of the info of each transaction' do
@@ -53,4 +47,5 @@ describe Account do
         expect(account.transactions_array).to eq(["#{Time.new.strftime("%d/%m/%Y")} || 1000 ||  || 1000", "#{Time.new.strftime("%d/%m/%Y")} ||  || 500 || 500"])
     end
   end
+  
 end
