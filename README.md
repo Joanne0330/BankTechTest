@@ -19,7 +19,7 @@ Step 4: To make a deposit, withdraw, get a receipt of the most recent transactio
     example: account.withdraw(500)
 
   -User can request an optional receipt of the last transaction made by typing in :
-    example: account.single_transaction
+    example: account.last_transaction
 
 Step 5: To print a statement of all the transactions made:
 
@@ -84,8 +84,8 @@ I would like all the transactions listed in the most recent order
 **The Statement should look something like this:**
 ```
 date || credit || debit || balance
-12/08/2020 ||  || 500 || 500
-12/08/2020 || 1000 ||  || 1000 
+12/08/2020 ||  || 500.00 || 500.00
+11/08/2020 || 1000.00 ||  || 1000.00 
 ```
 
 **Running the test**
