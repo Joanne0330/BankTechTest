@@ -37,7 +37,7 @@ Account Class:
 
   Can make a deposit: via 'deposit method' to add the value to the balance
   Can make a withdraw: via 'withdraw method' to minus the value from the balance
-  Can make a receipt of the most recent transaction: via 'single_transaction' method
+  Can make a receipt of the most recent transaction: via 'last_transaction' method
   Can store the history of all the transactions made: via 'transactions_array' method
 ```
 ```
