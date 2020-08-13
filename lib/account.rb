@@ -6,7 +6,6 @@ class Account
     def initialize
       @balance = 0
       @transactions_array = []
-
     end
 
     def deposit(input_amount)
